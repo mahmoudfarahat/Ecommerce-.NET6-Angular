@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecom.DAL.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20221226115144_init")]
+    [Migration("20221226130002_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
