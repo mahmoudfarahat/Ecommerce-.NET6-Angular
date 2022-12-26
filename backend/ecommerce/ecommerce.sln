@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecommerce", "ecommerce.csproj", "{C40D6943-94D7-4382-BD86-C0F1A7E47D92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.DAL", "..\Ecom.DAL\Ecom.DAL.csproj", "{0A435507-35E0-4353-9292-8943598A1862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.BLL", "..\Ecom.BLL\Ecom.BLL.csproj", "{C9E6CC6A-83DC-4B9D-AE79-8560F94D1DAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C40D6943-94D7-4382-BD86-C0F1A7E47D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C40D6943-94D7-4382-BD86-C0F1A7E47D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C40D6943-94D7-4382-BD86-C0F1A7E47D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C40D6943-94D7-4382-BD86-C0F1A7E47D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A435507-35E0-4353-9292-8943598A1862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A435507-35E0-4353-9292-8943598A1862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A435507-35E0-4353-9292-8943598A1862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A435507-35E0-4353-9292-8943598A1862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E6CC6A-83DC-4B9D-AE79-8560F94D1DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E6CC6A-83DC-4B9D-AE79-8560F94D1DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E6CC6A-83DC-4B9D-AE79-8560F94D1DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E6CC6A-83DC-4B9D-AE79-8560F94D1DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59D308B7-3AB7-454E-919D-527676D39D2B}
+	EndGlobalSection
+EndGlobal
