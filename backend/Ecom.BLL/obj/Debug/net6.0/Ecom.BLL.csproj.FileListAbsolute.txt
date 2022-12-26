@@ -1,0 +1,12 @@
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\bin\Debug\net6.0\Ecom.BLL.deps.json
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\bin\Debug\net6.0\Ecom.BLL.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\bin\Debug\net6.0\Ecom.BLL.pdb
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\obj\Debug\net6.0\Ecom.BLL.csproj.AssemblyReference.cache
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\obj\Debug\net6.0\Ecom.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\obj\Debug\net6.0\Ecom.BLL.AssemblyInfoInputs.cache
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\obj\Debug\net6.0\Ecom.BLL.AssemblyInfo.cs
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\obj\Debug\net6.0\Ecom.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\obj\Debug\net6.0\Ecom.BLL.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\obj\Debug\net6.0\refint\Ecom.BLL.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\obj\Debug\net6.0\Ecom.BLL.pdb
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.BLL\obj\Debug\net6.0\ref\Ecom.BLL.dll

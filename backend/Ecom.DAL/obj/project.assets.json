@@ -734,6 +734,16 @@
             "rid": "win"
           }
         }
+      },
+      "Ecom.BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Ecom.BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ecom.BLL.dll": {}
+        }
       }
     }
   },
@@ -1898,10 +1908,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Ecom.BLL/1.0.0": {
+      "type": "project",
+      "path": "../Ecom.BLL/Ecom.BLL.csproj",
+      "msbuildProject": "../Ecom.BLL/Ecom.BLL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Ecom.BLL >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.0"
     ]
   },
@@ -1941,7 +1957,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Mahmoud\\Desktop\\ecommerce\\backend\\Ecom.BLL\\Ecom.BLL.csproj": {
+              "projectPath": "C:\\Users\\Mahmoud\\Desktop\\ecommerce\\backend\\Ecom.BLL\\Ecom.BLL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

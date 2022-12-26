@@ -1,0 +1,15 @@
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\bin\Debug\net6.0\Ecom.DAL.deps.json
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\bin\Debug\net6.0\Ecom.DAL.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\bin\Debug\net6.0\Ecom.DAL.pdb
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\bin\Debug\net6.0\Ecom.BLL.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\bin\Debug\net6.0\Ecom.BLL.pdb
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\Ecom.DAL.csproj.AssemblyReference.cache
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\Ecom.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\Ecom.DAL.AssemblyInfoInputs.cache
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\Ecom.DAL.AssemblyInfo.cs
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\Ecom.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\Ecom.DAL.csproj.CopyComplete
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\Ecom.DAL.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\refint\Ecom.DAL.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\Ecom.DAL.pdb
+C:\Users\Mahmoud\Desktop\ecommerce\backend\Ecom.DAL\obj\Debug\net6.0\ref\Ecom.DAL.dll
