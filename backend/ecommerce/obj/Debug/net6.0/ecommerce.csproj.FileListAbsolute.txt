@@ -69,3 +69,4 @@ C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\obj\Debug\net6.0\refint\eco
 C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\obj\Debug\net6.0\ecommerce.pdb
 C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\obj\Debug\net6.0\ecommerce.genruntimeconfig.cache
 C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\obj\Debug\net6.0\ref\ecommerce.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\bin\Debug\net6.0\ecommerce.staticwebassets.runtime.json

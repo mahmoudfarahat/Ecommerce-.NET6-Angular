@@ -19,6 +19,8 @@ namespace ecommerce
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            builder.Services.AddAutoMapper(typeof(MappingProfiles));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -32,6 +34,8 @@ namespace ecommerce
                 app.UseSwaggerUI();
             }
             Seed.SeedData(app);
+
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
