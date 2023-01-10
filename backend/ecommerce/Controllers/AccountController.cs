@@ -3,9 +3,11 @@ using Ecom.BLL.Entities.Identity;
 using Ecom.BLL.Interfaces;
 using ecommerce.Dto;
 using ecommerce.Errors;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ecommerce.Controllers
 {
@@ -77,5 +79,17 @@ namespace ecommerce.Controllers
         [HttpGet("emailexists")]
         public async Task<ActionResult<bool>> CheckEMailExistesAsync([FromQuery] string email)
             => await _userManager.FindByEmailAsync(email) != null;
-              }  
+
+        [Authorize]
+        [HttpGet]
+        public async Task<ActionResult<UserDto>> GetCurrentUser()
+        {
+            //var email = HttpContext.User?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
+            var email = User?.FindFirstValue(ClaimTypes.Email);
+            var user = await _userManager.FindByEmailAsync(email);
+
+            return new UserDto
+            { Email = user.Email,DisplayName = user.DisplayName,Token = _tokenService.CreateToken(user) };
+        }
+    }  
 }

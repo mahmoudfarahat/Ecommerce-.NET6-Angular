@@ -1,4 +1,5 @@
 ﻿using Ecom.BLL.Entities;
+using Ecom.BLL.Entities.Order;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,16 @@ namespace Ecom.DAL
                     for (int i = 0; i < products?.Count(); i++)
                     {
                         context.Products.Add(products[i]);
+                    }
+                    await context.SaveChangesAsync();
+                }
+                if (context.DeliveryMethods != null && !context.DeliveryMethods.Any())
+                {
+                    var deliveryMethods = File.ReadAllText("../Ecom.Dal/Data/SeedData/delivery.json");
+                    var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryMethods);
+                    for (int i = 0; i < methods?.Count(); i++)
+                    {
+                        context.DeliveryMethods.Add(methods[i]);
                     }
                     await context.SaveChangesAsync();
                 }
