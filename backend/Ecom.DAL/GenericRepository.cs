@@ -23,6 +23,9 @@ namespace Ecom.DAL
         public void Add(T Entity)
              => _context.Set<T>().Add(Entity);
 
+        public async Task<int> CountAsync(ISpecifications<T> spec)
+            => await ApplySpecifcation(spec).CountAsync();
+
         public void Delete(T Entity)
              => _context.Set<T>().Remove(Entity);
 

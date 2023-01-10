@@ -70,3 +70,8 @@ C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\obj\Debug\net6.0\ecommerce.
 C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\obj\Debug\net6.0\ecommerce.genruntimeconfig.cache
 C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\obj\Debug\net6.0\ref\ecommerce.dll
 C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\bin\Debug\net6.0\ecommerce.staticwebassets.runtime.json
+C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\bin\Debug\net6.0\StackExchange.Redis.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Mahmoud\Desktop\ecommerce\backend\ecommerce\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

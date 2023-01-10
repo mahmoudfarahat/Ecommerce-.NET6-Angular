@@ -16,6 +16,8 @@ namespace Ecom.BLL.Interfaces
 
         Task<IReadOnlyList<T>> ListWithSpecAsync(ISpecifications<T> spec);
         Task<T> GetENtityWithSpec(ISpecifications<T> spec);
+
+        Task<int> CountAsync(ISpecifications<T> spec);
         void Add(T Entity);
         void Update(T Entity);
         void Delete(T Entity);

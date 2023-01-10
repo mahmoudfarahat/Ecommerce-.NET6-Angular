@@ -1,4 +1,7 @@
-﻿using Ecom.DAL;
+﻿using Ecom.BLL.Entities.Identity;
+using Ecom.DAL;
+using Ecom.DAL.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace ecommerce.Helpers
@@ -16,6 +19,11 @@ namespace ecommerce.Helpers
                     var context = services.GetRequiredService<StoreContext>();
                     await context.Database.MigrateAsync();
                     await StoreContextSeed.SeedAsync(context, loggerFactory);
+
+                    var userManager = services.GetRequiredService<UserManager<AppUser>>();
+                    var identityContext = services.GetRequiredService<AppIdentityDbContext>();
+                    await identityContext.Database.MigrateAsync();
+                    await AppIdentityDbContextSeed.SeedUserAsync(userManager);
                 }
                 catch (Exception ex)
                 {
