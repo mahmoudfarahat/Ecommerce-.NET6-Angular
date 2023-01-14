@@ -17,7 +17,7 @@ namespace Ecom.DAL
 
         public GenericRepository(StoreContext context)
         {
-            _context = context;
+            _context = context;  
         }
 
         public void Add(T Entity)

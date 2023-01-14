@@ -9,7 +9,7 @@ namespace ecommerce.Extensions
             services.AddSwaggerGen(opt =>
             {
                 opt.SwaggerDoc("v1", new OpenApiInfo { Title = "ecommerce", Version = "v1" });
-                var securotySchema = new OpenApiSecurityScheme
+                var securtySchema = new OpenApiSecurityScheme
                 {
                     Description = "JWT Auth Bearer Scheme",
                     Name = "Authorization",
@@ -22,12 +22,12 @@ namespace ecommerce.Extensions
                         Type = ReferenceType.SecurityScheme
                     }
                 };
-                opt.AddSecurityDefinition("Bearer", securotySchema);
+                opt.AddSecurityDefinition("Bearer", securtySchema);
                 var securityRequirement = new OpenApiSecurityRequirement
                 {
-                    {securotySchema, new[] {"Bearer"} }
+                    {securtySchema, new[] {"Bearer"} }
                 };
-          
+                opt.AddSecurityRequirement(securityRequirement);
             });
 
             return services;

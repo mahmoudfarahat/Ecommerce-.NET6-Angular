@@ -3,6 +3,7 @@ using Ecom.BLL.Entities.Identity;
 using Ecom.BLL.Interfaces;
 using ecommerce.Dto;
 using ecommerce.Errors;
+using ecommerce.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -18,15 +19,17 @@ namespace ecommerce.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
+        private readonly IAppSession _appSession;
 
         public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, 
-            ITokenService tokenService , IMapper mapper
+            ITokenService tokenService , IMapper mapper , IAppSession appSession
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
            _tokenService = tokenService;
             _mapper = mapper;
+            _appSession = appSession;
         }
 
         [HttpPost("Login")]
@@ -89,7 +92,12 @@ namespace ecommerce.Controllers
             var user = await _userManager.FindByEmailAsync(email);
 
             return new UserDto
-            { Email = user.Email,DisplayName = user.DisplayName,Token = _tokenService.CreateToken(user) };
+            { 
+                Email = user.Email,
+                 DisplayName = user.DisplayName,
+            
+                 Token = _appSession.AuthorizationToken,
+           };
         }
     }  
 }

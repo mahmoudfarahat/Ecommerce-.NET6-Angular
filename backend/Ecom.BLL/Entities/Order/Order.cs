@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ecom.BLL.Entities.Order
 {
-    public class Order
+    public class Order:BaseEntity
     {
         public Order()
         {

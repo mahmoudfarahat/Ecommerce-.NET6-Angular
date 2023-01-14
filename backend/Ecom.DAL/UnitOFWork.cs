@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Ecom.DAL
 {
-    public class UnitOFWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly StoreContext _context;
         private Hashtable _repositories;
 
-        public UnitOFWork(StoreContext context)
+        public UnitOfWork(StoreContext context)
         {
             _context = context;
         }
@@ -32,7 +32,7 @@ namespace Ecom.DAL
 
             var type = typeof(TEntity).Name;
 
-            if(_repositories.ContainsKey(type))
+            if(!_repositories.ContainsKey(type))
             {
                 var repositoryType = typeof(GenericRepository<>);
                 var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)),_context);

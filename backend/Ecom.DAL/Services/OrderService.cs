@@ -1,6 +1,7 @@
 ﻿using Ecom.BLL.Entities;
 using Ecom.BLL.Entities.Order;
 using Ecom.BLL.Interfaces;
+using Ecom.BLL.Specifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Ecom.DAL.Services
 {
-    internal class OrderService : IOrderService
+    public class OrderService : IOrderService
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IBaskedRepository _baskedRepository;
@@ -25,9 +26,11 @@ namespace Ecom.DAL.Services
             var basket = await _baskedRepository.GetBasketAsync(basketId);
 
             var items = new List<OrderItem>();
+
             foreach (var item in basket.Items)
             {
                 var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
+
                 var itemOrdered = new ProductItemOrdered(productItem.Id, productItem.Name, productItem.PictureUrl);
                 var orderItem = new OrderItem(itemOrdered,productItem.Price,item.Quantity);
                 items.Add(orderItem);
@@ -35,22 +38,37 @@ namespace Ecom.DAL.Services
             var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod>().GetByIdAsync(deliveryMethodId);
 
 
-            var subtotal = 
+            var subtotal = items.Sum(item => item.Price * item.Quantity);
+
+            var order = new Order(buyerEmail, shippingAddress,deliveryMethod,items,subtotal);
+
+            _unitOfWork.Repository<Order>().Add(order);
+
+            var result = await _unitOfWork.Complete();
+
+            if (result <= 0) return null;
+       
+            await _baskedRepository.DeleteBasketAsync(basketId);
+           
+            return order;
         }
 
-        public Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync()
+        public async Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync()
+             => await _unitOfWork.Repository<DeliveryMethod>().ListAllAsync();
+
+        public async Task<Order> GetOrderByIdAsync(int id, string buyerEmail)
         {
-            throw new NotImplementedException();
+            var spec = new OrdersWithItemsAndOrderingSpecification(id, buyerEmail);
+            return await _unitOfWork.Repository<Order>().GetENtityWithSpec(spec);
         }
 
-        public Task<Order> GetOrderByIdAsync(int id, string buyerEmail)
+        public async Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
         {
-            throw new NotImplementedException();
+
+            var spec = new OrdersWithItemsAndOrderingSpecification(buyerEmail);
+            return await _unitOfWork.Repository<Order>().ListWithSpecAsync(spec);
         }
 
-        public Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
