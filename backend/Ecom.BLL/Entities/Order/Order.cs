@@ -12,13 +12,15 @@ namespace Ecom.BLL.Entities.Order
         {
         }
 
-        public Order(string buyerEmail, Address shipedToAdress, DeliveryMethod deliveryMethod, IReadOnlyList<OrderItem> orderItems, decimal subtotal)
+        public Order(string buyerEmail, Address shipedToAdress, DeliveryMethod deliveryMethod, IReadOnlyList<OrderItem> orderItems, decimal subtotal , string paymentIntentId)
         {
             BuyerEmail = buyerEmail;
             ShipedToAdress = shipedToAdress;
             DeliveryMethod = deliveryMethod;
             this.OrderItems = orderItems;
             Subtotal = subtotal;
+
+            PaymentIntentId = paymentIntentId;
         }
 
         public int Id { get; set; }
@@ -34,8 +36,8 @@ namespace Ecom.BLL.Entities.Order
 
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
 
-
-        public decimal GetTotal()
+        public string PaymentIntentId { get; set; }
+         public decimal GetTotal()
                  => Subtotal + DeliveryMethod.Price;
     }
 }

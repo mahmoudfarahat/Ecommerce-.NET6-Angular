@@ -21,8 +21,14 @@ namespace Ecom.BLL.Entities
         public string Id { get; set; }
 
         public List<BasketItem> Items { get; set; } = new List<BasketItem>();
-        public int? DelivertMethod { get; set; }
+        public int? DelivertMethodId { get; set; }
 
         public decimal ShippingPrice { get; set; }
+
+        public string? ClientSecret { get; set; }
+
+        public string? PaymentIntentId { get; set; }
+
+
     }
 }

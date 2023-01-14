@@ -22,6 +22,8 @@ namespace ecommerce.Extensions
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAppSession, AppSession>();
+            services.AddScoped<IPaymentService  ,PaymentService>();
+
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.InvalidModelStateResponseFactory = actionContext =>

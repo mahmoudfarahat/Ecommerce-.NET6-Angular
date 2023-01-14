@@ -14,11 +14,13 @@ namespace Ecom.DAL.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IBaskedRepository _baskedRepository;
+        private readonly IPaymentService _paymentService;
 
-        public OrderService(IUnitOfWork unitOfWork, IBaskedRepository baskedRepository)
+        public OrderService(IUnitOfWork unitOfWork, IBaskedRepository baskedRepository, IPaymentService paymentService)
         {
             _unitOfWork = unitOfWork;
             _baskedRepository = baskedRepository;
+            _paymentService = paymentService;
         }
 
         public async Task<Order> CreateOrderAsync(string buyerEmail, int deliveryMethodId, string basketId, Address shippingAddress)
@@ -40,7 +42,16 @@ namespace Ecom.DAL.Services
 
             var subtotal = items.Sum(item => item.Price * item.Quantity);
 
-            var order = new Order(buyerEmail, shippingAddress,deliveryMethod,items,subtotal);
+            var spec = new OrderWithPaymentIntentSpecification(basket.PaymentIntentId);
+
+            var existingOrder = await _unitOfWork.Repository<Order>().GetENtityWithSpec(spec);
+            if(existingOrder != null)
+            {
+                _unitOfWork.Repository<Order>().Delete(existingOrder);
+                //await _paymentService.CreateOrUpdatePaymentIntent(basket.PaymentIntentId);
+                 await _paymentService.CreateOrUpdatePaymentIntent(basket.Id);
+            }
+            var order = new Order(buyerEmail, shippingAddress,deliveryMethod,items,subtotal,basket.PaymentIntentId);
 
             _unitOfWork.Repository<Order>().Add(order);
 

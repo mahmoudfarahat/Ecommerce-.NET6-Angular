@@ -24,6 +24,6 @@
             }
         }
 
-        //public string UserName => _httpContextAccessor?.HttpContext?.User.;
+        public string UserName => _httpContextAccessor?.HttpContext?.User.Identity.Name;
     }
 }
